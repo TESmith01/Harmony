@@ -51,6 +51,7 @@ public class UserInteraction {
             System.out.println(song.getSongname());
 
         }
+
         menu2();
 
     }
@@ -60,11 +61,10 @@ public class UserInteraction {
         for (SongInfo song : library.getSongs()) {
             System.out.println(song.getArtistname());
         }
-        System.out.println("What would you like to do next");
+
         menu2();
     }
 
-    // why isn't this printing out the first 5 songs?
     private void over50k() {
         List<SongInfo> Selectedsongs = new ArrayList<SongInfo>();
 
@@ -81,7 +81,7 @@ public class UserInteraction {
         menu2();
     }
 
-    // figure out how to add and remove a song
+
     private void addsong() {
         System.out.println("Please enter the song name, artist name, playcount");
         String usersong;
@@ -96,7 +96,7 @@ public class UserInteraction {
         menu2();
     }
 
-    // how to remove a song
+
     private void removesong() {
         System.out.println("Please enter the song you wish to remove");
         Scanner removeScanner = new Scanner(System.in);
@@ -104,7 +104,6 @@ public class UserInteraction {
         SongInfo userremovesong = null;
                     for (SongInfo removeSongInfo : library.getSongs()) {
                 if (removeSongInfo.getSongname().equals(removesong)) {
-                    //temp sotring song after response
                     userremovesong = removeSongInfo;
                 }
             }
