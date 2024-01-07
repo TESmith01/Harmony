@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInteraction {
@@ -64,7 +66,14 @@ public class UserInteraction {
 
     // why isn't this printing out the first 5 songs?
     private void over50k() {
-        for (SongInfo songInfo : library.getSongs().subList(0, 5)) {
+        List<SongInfo> Selectedsongs = new ArrayList<SongInfo>();
+
+        for (SongInfo currentsong : library.getSongs()) {
+            if (currentsong.getPlaycount() > 50000) {
+                Selectedsongs.add(currentsong);
+            }
+        }
+        for (SongInfo songInfo : Selectedsongs){
             System.out.println("Here are the songs with over 50K plays: "
                     + (songInfo.getSongname() + " by " + songInfo.getArtistname() + " with " + songInfo.getPlaycount()
                             + " plays"));
